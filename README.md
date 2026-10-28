@@ -107,6 +107,13 @@ skill-evolver/
     └── evolution.md              # 进化模式完整设计：融合、评测、迭代、终止标准
 ```
 
+## 免责声明
+
+- 本工具仅通过 GitHub **官方公开 API** 检索公开仓库的元数据（star、简介、更新日期等），不爬取非公开内容、不绕过平台限流。
+- 第三方 skill 的下载、安装与使用由使用者自行判断并承担责任；使用前请自行核对其许可证条款（是否有 license、能否商用、是否含 GPL 等传染性条款）。
+- 请遵守 [GitHub API 使用政策](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) 与各 agent 平台的服务条款；请勿用于高频批量抓取。
+- 本项目按 MIT 协议“按原样”提供，不对检索结果的质量、准确性或适用性作任何担保。
+
 ## License
 
 [MIT](LICENSE) © 2026 cbx87
