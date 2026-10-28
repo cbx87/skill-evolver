@@ -27,30 +27,32 @@
 
 35k star 的录屏工具被正确压到第 5——star 高只说明人多，不说明对你的任务有用。
 
-## 安装
+## 安装（全平台通用）
 
-### WorkBuddy
+skill-evolver 遵循 [Agent Skills](https://skill.md) 开放标准，同一份 SKILL.md 可直接运行于所有兼容客户端，无需任何改写——区别只是各家的 skills 目录不同：
+
+| Agent / 工具 | 全局安装路径（所有项目可用） | 项目级路径 |
+|------|------|------|
+| WorkBuddy | `~/.workbuddy/skills/` | 项目 `.workbuddy/skills/` |
+| Claude Code | `~/.claude/skills/` | 项目 `.claude/skills/` |
+| OpenAI Codex CLI | `~/.codex/skills/` | 项目 `.codex/skills/` |
+| Gemini CLI | `~/.gemini/skills/` | 项目 `.agents/skills/` |
+| GitHub Copilot | `~/.copilot/skills/` | 项目 `.github/skills/` |
+| Cursor | 无全局目录 | 项目 `.cursor/skills/` |
+| Cline / Amp / Warp 等新锐 agent | `~/.agents/skills/` | 项目 `.agents/skills/` |
+
+**一条命令装遍所有主流 agent**（clone 后执行，装有的全装，没有的自动跳过）：
 
 ```bash
 git clone https://github.com/cbx87/skill-evolver.git
-cp -R skill-evolver ~/.workbuddy/skills/
+for d in ~/.workbuddy/skills ~/.claude/skills ~/.codex/skills ~/.gemini/skills ~/.copilot/skills ~/.agents/skills; do
+  mkdir -p "$d" && cp -R skill-evolver "$d/"
+done
 ```
 
-重开会话后说一句话即自动触发。
-
-### Claude Code
-
-```bash
-cp -R skill-evolver ~/.claude/skills/
-```
-
-### Codex CLI
-
-```bash
-cp -R skill-evolver ~/.codex/skills/
-```
-
-> Codex 的 skills 为实验特性，若未生效请在 `~/.codex/config.toml` 中添加 `[features] skills = true`，并重开会话。
+> - Codex 的 skills 为实验特性，若未生效请在 `~/.codex/config.toml` 中添加 `[features] skills = true`
+> - Cursor 仅支持项目级，且装完需重载窗口
+> - 装完记得**重开会话**，所有 agent 都只在启动时扫描 skills 目录
 
 ## 用法
 
